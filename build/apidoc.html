@@ -1,0 +1,6063 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/chjj/ttystudio"
+
+    >ttystudio (v0.0.16)</a>
+</h1>
+<h4>A terminal-to-gif recorder minus the headaches.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio">module ttystudio</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.ttystudio">
+            function <span class="apidocSignatureSpan"></span>ttystudio
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter">
+            function <span class="apidocSignatureSpan">ttystudio.</span>GIFWriter
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.PNGWriter">
+            function <span class="apidocSignatureSpan">ttystudio.</span>PNGWriter
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter">
+            function <span class="apidocSignatureSpan">ttystudio.</span>SGRWriter
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer">
+            function <span class="apidocSignatureSpan">ttystudio.</span>buffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.compile">
+            function <span class="apidocSignatureSpan">ttystudio.</span>compile
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.gif">
+            function <span class="apidocSignatureSpan">ttystudio.</span>gif
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.optimize">
+            function <span class="apidocSignatureSpan">ttystudio.</span>optimize
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.play">
+            function <span class="apidocSignatureSpan">ttystudio.</span>play
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png">
+            function <span class="apidocSignatureSpan">ttystudio.</span>png
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.record">
+            function <span class="apidocSignatureSpan">ttystudio.</span>record
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.writer">
+            function <span class="apidocSignatureSpan">ttystudio.</span>writer
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ttystudio.</span>GIFWriter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ttystudio.</span>SGRWriter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ttystudio.</span>buffer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ttystudio.</span>optimize.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ttystudio.</span>png.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.GIFWriter">module ttystudio.GIFWriter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.GIFWriter">
+            function <span class="apidocSignatureSpan">ttystudio.</span>GIFWriter
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.GIFWriter.prototype">module ttystudio.GIFWriter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.compress">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>compress
+            <span class="apidocSignatureSpan">(frame, imgBuffer, codeSize)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.createPalette">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>createPalette
+            <span class="apidocSignatureSpan">(frames)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.log">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.lookupPalette">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>lookupPalette
+            <span class="apidocSignatureSpan">(table, pixel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.out">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>out
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.write">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.write16">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>write16
+            <span class="apidocSignatureSpan">(ch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.write8">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>write8
+            <span class="apidocSignatureSpan">(ch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.writeByte">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeByte
+            <span class="apidocSignatureSpan">(ch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.writeBytes">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeBytes
+            <span class="apidocSignatureSpan">(array, offset, length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.writeEOF">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeEOF
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.writeFrame">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeFrame
+            <span class="apidocSignatureSpan">(frame, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.writeGCE">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeGCE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.writeHead">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeHead
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.writeNetscape">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeNetscape
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.GIFWriter.prototype.writeText">
+            function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeText
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.SGRWriter">module ttystudio.SGRWriter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.SGRWriter">
+            function <span class="apidocSignatureSpan">ttystudio.</span>SGRWriter
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.GIFWriter">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>GIFWriter
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.PNGWriter">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>PNGWriter
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.buffer">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>buffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.compile">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>compile
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.gif">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>gif
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.optimize">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>optimize
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.play">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>play
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.png">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>png
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.record">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>record
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.writer">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>writer
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.SGRWriter.prototype">module ttystudio.SGRWriter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.addBorder">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>addBorder
+            <span class="apidocSignatureSpan">(bmp, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.addChars">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>addChars
+            <span class="apidocSignatureSpan">(bmp, chs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.convertCharToPixels">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>convertCharToPixels
+            <span class="apidocSignatureSpan">(x, y, cell, pixel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.convertFrame">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>convertFrame
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.loadFont">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>loadFont
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.log">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.parseCellmap">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>parseCellmap
+            <span class="apidocSignatureSpan">(cellmap)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.parseSGR">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>parseSGR
+            <span class="apidocSignatureSpan">(ANSI)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.SGRWriter.prototype.write">
+            function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.buffer">module ttystudio.buffer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.buffer">
+            function <span class="apidocSignatureSpan">ttystudio.</span>buffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.buffer.prototype">module ttystudio.buffer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.asciiSlice">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>asciiSlice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.asciiWrite">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>asciiWrite
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.base64Slice">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>base64Slice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.base64Write">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>base64Write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.compare">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>compare
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.copy">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>copy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.equals">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>equals
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.fill">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>fill
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.hexSlice">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>hexSlice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.hexWrite">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>hexWrite
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.includes">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>includes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.indexOf">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>indexOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.inspect">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>inspect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.lastIndexOf">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>lastIndexOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.latin1Slice">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>latin1Slice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.latin1Write">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>latin1Write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.offset">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>offset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.parent">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>parent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readDoubleBE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readDoubleBE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readDoubleLE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readDoubleLE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readFloatBE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readFloatBE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readFloatLE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readFloatLE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readInt16BE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt16BE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readInt16LE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt16LE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readInt32BE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt32BE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readInt32LE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt32LE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readInt8">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt8
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readIntBE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readIntBE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readIntLE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readIntLE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readUInt16BE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt16BE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readUInt16LE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt16LE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readUInt32BE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt32BE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readUInt32LE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt32LE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readUInt8">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt8
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readUIntBE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUIntBE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.readUIntLE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUIntLE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.slice">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>slice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.swap16">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>swap16
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.swap32">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>swap32
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.swap64">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>swap64
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.toJSON">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.toString">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.ucs2Slice">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>ucs2Slice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.ucs2Write">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>ucs2Write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.utf8Slice">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>utf8Slice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.utf8Write">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>utf8Write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.write">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeDoubleBE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeDoubleBE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeDoubleLE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeDoubleLE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeFloatBE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeFloatBE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeFloatLE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeFloatLE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeInt16BE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt16BE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeInt16LE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt16LE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeInt32BE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt32BE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeInt32LE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt32LE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeInt8">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt8
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeIntBE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeIntBE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeIntLE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeIntLE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeUInt16BE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt16BE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeUInt16LE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt16LE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeUInt32BE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt32BE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeUInt32LE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt32LE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeUInt8">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt8
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeUIntBE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUIntBE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.buffer.prototype.writeUIntLE">
+            function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUIntLE
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.optimize">module ttystudio.optimize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.optimize.optimize">
+            function <span class="apidocSignatureSpan">ttystudio.</span>optimize
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.optimize.prototype">module ttystudio.optimize.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.optimize.prototype.log">
+            function <span class="apidocSignatureSpan">ttystudio.optimize.prototype.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.optimize.prototype.offset">
+            function <span class="apidocSignatureSpan">ttystudio.optimize.prototype.</span>offset
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.optimize.prototype.reset">
+            function <span class="apidocSignatureSpan">ttystudio.optimize.prototype.</span>reset
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.png">module ttystudio.png</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.png">
+            function <span class="apidocSignatureSpan">ttystudio.</span>png
+            <span class="apidocSignatureSpan">(frames, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ttystudio.png.prototype">module ttystudio.png.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.compress">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>compress
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.crc">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>crc
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.createPalette">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>createPalette
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.endCRC">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>endCRC
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.log">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.lookupPalette">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>lookupPalette
+            <span class="apidocSignatureSpan">(pixel)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.out">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>out
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.startCRC">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>startCRC
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.write">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.write16">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>write16
+            <span class="apidocSignatureSpan">(ch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.write32">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>write32
+            <span class="apidocSignatureSpan">(ch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.write8">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>write8
+            <span class="apidocSignatureSpan">(ch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.writeACTL">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeACTL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.writeEOF">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeEOF
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.writeFrame">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeFrame
+            <span class="apidocSignatureSpan">(frame, frameIndex)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.writeHead">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeHead
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.writeIDAT">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeIDAT
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.writePalette">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writePalette
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.writeText">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeText
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ttystudio.png.prototype.writeTrans">
+            function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeTrans
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio" id="apidoc.module.ttystudio">module ttystudio</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.ttystudio" id="apidoc.element.ttystudio.ttystudio">
+        function <span class="apidocSignatureSpan"></span>ttystudio
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SGRWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof SGRWriter)) {
+    return new SGRWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.options = options || {};
+  this.options.convertFrame = this.convertFrame.bind(this);
+
+  if (this.options.png) {
+    this.writer = new PNGWriter(frames, this.options);
+  } else {
+    this.writer = new GIFWriter(frames, this.options);
+  }
+
+  this.writer.on(&#x27;done&#x27;, function(event) {
+    self.emit(&#x27;done&#x27;, event);
+  });
+
+  this.ratio = this.options.ratio || {
+    width: 8,
+    height: 15
+  };
+
+  this.options.font = this.options.font
+    || __dirname + &#x27;/../fonts/ter-u14n.json&#x27;;
+  this.options.fontBold = this.options.fontBold
+    || __dirname + &#x27;/../fonts/ter-u14b.json&#x27;;
+
+  this.font = this.loadFont(this.options.font);
+  this.fontBold = this.loadFont(this.options.fontBold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter" id="apidoc.element.ttystudio.GIFWriter">
+        function <span class="apidocSignatureSpan">ttystudio.</span>GIFWriter
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GIFWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof GIFWriter)) {
+    return new GIFWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  if (this.frames.length &#x3e; 1) {
+    this.options.numPlays = this.options.numPlays || 0;
+    this.options.delay = this.options.delay || 100;
+  }
+
+  this.optimizer = new Optimizer(this.options);
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.PNGWriter" id="apidoc.element.ttystudio.PNGWriter">
+        function <span class="apidocSignatureSpan">ttystudio.</span>PNGWriter
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GIFWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof GIFWriter)) {
+    return new GIFWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  if (this.frames.length &#x3e; 1) {
+    this.options.numPlays = this.options.numPlays || 0;
+    this.options.delay = this.options.delay || 100;
+  }
+
+  this.optimizer = new Optimizer(this.options);
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter" id="apidoc.element.ttystudio.SGRWriter">
+        function <span class="apidocSignatureSpan">ttystudio.</span>SGRWriter
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SGRWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof SGRWriter)) {
+    return new SGRWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.options = options || {};
+  this.options.convertFrame = this.convertFrame.bind(this);
+
+  if (this.options.png) {
+    this.writer = new PNGWriter(frames, this.options);
+  } else {
+    this.writer = new GIFWriter(frames, this.options);
+  }
+
+  this.writer.on(&#x27;done&#x27;, function(event) {
+    self.emit(&#x27;done&#x27;, event);
+  });
+
+  this.ratio = this.options.ratio || {
+    width: 8,
+    height: 15
+  };
+
+  this.options.font = this.options.font
+    || __dirname + &#x27;/../fonts/ter-u14n.json&#x27;;
+  this.options.fontBold = this.options.fontBold
+    || __dirname + &#x27;/../fonts/ter-u14b.json&#x27;;
+
+  this.font = this.loadFont(this.options.font);
+  this.fontBold = this.loadFont(this.options.fontBold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer" id="apidoc.element.ttystudio.buffer">
+        function <span class="apidocSignatureSpan">ttystudio.</span>buffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ExpandingBuffer() {
+  var self = this;
+  if (!(self instanceof ExpandingBuffer)) {
+    self = Object.create(ExpandingBuffer.prototype);
+  }
+  if (Buffer.isBuffer(arguments[0])) {
+    self.buffer = arguments[0];
+  } else {
+    self.buffer = Buffer.apply(null, arguments);
+  }
+  return self;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.compile" id="apidoc.element.ttystudio.compile">
+        function <span class="apidocSignatureSpan">ttystudio.</span>compile
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compile(options, callback) {
+  var input = options.files[0]
+    , output = options.o || options.output || options.files[1]
+    , stream
+    , frames
+    , writer;
+
+  if (output) {
+    if (output === &#x27;-&#x27;) {
+      stream = process.stdout;
+      output = &#x27;[stdout]&#x27;;
+    } else {
+      stream = fs.createWriteStream(output);
+    }
+  }
+
+  options.stream = stream;
+  options.delay = options.delay || 100;
+  options.png = options.png || /\.png$/i.test(output);
+
+  if (Array.isArray(input)) {
+    frames = input;
+  } else if (typeof input === &#x27;string&#x27;) {
+    if (~input.indexOf(&#x27;.json&#x27;)) {
+      log(&#x27;parsing json&#x27;);
+      frames = JSON.parse(fs.readFileSync(input, &#x27;utf8&#x27;));
+    } else {
+      log(&#x27;reading file&#x27;);
+      frames = [fs.readFileSync(input, &#x27;utf8&#x27;)];
+    }
+  } else {
+    return callback(new Error(&#x27;No input file specified.&#x27;));
+  }
+
+  if (options.range) {
+    frames = frames.slice(options.range[0], options.range[1]);
+  }
+
+  log(&#x27;initializing writer&#x27;);
+  writer = new SGRWriter(frames, options);
+
+  writer.on(&#x27;done&#x27;, function(event) {
+    log(&#x27;stream: &#x27; + event);
+    log(&#x27;wrote image to %s&#x27;, output);
+    return callback();
+  });
+
+  log(&#x27;writing image&#x27;);
+  writer.write();
+
+  return writer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.gif" id="apidoc.element.ttystudio.gif">
+        function <span class="apidocSignatureSpan">ttystudio.</span>gif
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GIFWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof GIFWriter)) {
+    return new GIFWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  if (this.frames.length &#x3e; 1) {
+    this.options.numPlays = this.options.numPlays || 0;
+    this.options.delay = this.options.delay || 100;
+  }
+
+  this.optimizer = new Optimizer(this.options);
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.optimize" id="apidoc.element.ttystudio.optimize">
+        function <span class="apidocSignatureSpan">ttystudio.</span>optimize
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Optimizer(options) {
+  this.options = options || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.play" id="apidoc.element.ttystudio.play">
+        function <span class="apidocSignatureSpan">ttystudio.</span>play
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function play(options, callback) {
+  var frames = JSON.parse(fs.readFileSync(options.files[0], &#x27;utf8&#x27;));
+
+  var screen = blessed.screen({
+    smartCSR: true
+  });
+
+  screen.on(&#x27;C-c&#x27;, function() {
+    process.exit(0);
+  });
+
+  var timer = setInterval(function() {
+    if (!frames.length) {
+      clearInterval(timer);
+      screen.destroy();
+      return callback();
+    }
+    screen.lines = frames.shift();
+    screen.lines.forEach(function(line) {
+      line.dirty = true;
+    });
+    screen.render();
+  }, options.delay || 100);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png" id="apidoc.element.ttystudio.png">
+        function <span class="apidocSignatureSpan">ttystudio.</span>png
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PNGWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof PNGWriter)) {
+    return new PNGWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  this.optimizer = new Optimizer(this.options);
+
+  this.cbuff = new ExpandingBuffer(256);
+  this.seq = 0;
+  this.bitDepth = 8;
+  this.coffset = -1;
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.record" id="apidoc.element.ttystudio.record">
+        function <span class="apidocSignatureSpan">ttystudio.</span>record
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function record(options, callback) {
+  var frames = []
+    , out
+    , termName = &#x27;xterm&#x27;
+    , screen
+    , tty
+    , timeout;
+
+  try {
+    out = cp.execSync(&#x27;tput -Txterm-256color longname&#x27;, { encoding: &#x27;utf8&#x27; });
+    if (~out.indexOf(&#x27;256 colors&#x27;)) {
+      termName = &#x27;xterm-256color&#x27;;
+    }
+  } catch (e) {
+    ;
+  }
+
+  screen = blessed.screen({
+    smartCSR: true
+  });
+
+  tty = blessed.terminal({
+    parent: screen,
+    cursorBlink: false,
+    screenKeys: false,
+    left: 0,
+    top: 0,
+    term: options.term || termName,
+    width: screen.width,
+    height: screen.height
+  });
+
+  function screenshot() {
+    var lines = []
+      , y
+      , line
+      , cx
+      , x
+      , cell
+      , attr
+      , ch;
+
+    for (y = 0; y &#x3c; screen.lines.length; y++) {
+      line = [];
+      if (y === tty.term.y
+          &#x26;&#x26; tty.term.cursorState
+          &#x26;&#x26; (tty.term.ydisp === tty.term.ybase || tty.term.selectMode)
+          &#x26;&#x26; !tty.term.cursorHidden) {
+        cx = tty.term.x;
+      } else {
+        cx = -1;
+      }
+      for (x = 0; x &#x3c; screen.lines[y].length; x++) {
+        cell = screen.lines[y][x];
+        attr = cell[0];
+        ch = cell[1];
+        if (x === cx) attr = (0x1ff &#x3c;&#x3c; 9) | 15;
+        line.push([attr, ch]);
+      }
+      lines.push(line);
+    }
+    frames.push(lines);
+  }
+
+  if (!options.screenshot) {
+    timeout = setInterval(screenshot, options.interval || 100);
+    if (timeout.unref) timeout.unref();
+  } else {
+    screen.key(options.screenshotKey || &#x27;C-p&#x27;, screenshot);
+  }
+
+  function done() {
+    if (!done.called) {
+      done.called = true;
+
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+
+      screen.destroy();
+
+      callback(null, frames);
+    }
+  }
+
+  screen.key(options.key || &#x27;C-q&#x27;, done);
+
+  process.on(&#x27;exit&#x27;, done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.writer" id="apidoc.element.ttystudio.writer">
+        function <span class="apidocSignatureSpan">ttystudio.</span>writer
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SGRWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof SGRWriter)) {
+    return new SGRWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.options = options || {};
+  this.options.convertFrame = this.convertFrame.bind(this);
+
+  if (this.options.png) {
+    this.writer = new PNGWriter(frames, this.options);
+  } else {
+    this.writer = new GIFWriter(frames, this.options);
+  }
+
+  this.writer.on(&#x27;done&#x27;, function(event) {
+    self.emit(&#x27;done&#x27;, event);
+  });
+
+  this.ratio = this.options.ratio || {
+    width: 8,
+    height: 15
+  };
+
+  this.options.font = this.options.font
+    || __dirname + &#x27;/../fonts/ter-u14n.json&#x27;;
+  this.options.fontBold = this.options.fontBold
+    || __dirname + &#x27;/../fonts/ter-u14b.json&#x27;;
+
+  this.font = this.loadFont(this.options.font);
+  this.fontBold = this.loadFont(this.options.fontBold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.GIFWriter" id="apidoc.module.ttystudio.GIFWriter">module ttystudio.GIFWriter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.GIFWriter" id="apidoc.element.ttystudio.GIFWriter.GIFWriter">
+        function <span class="apidocSignatureSpan">ttystudio.</span>GIFWriter
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GIFWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof GIFWriter)) {
+    return new GIFWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  if (this.frames.length &#x3e; 1) {
+    this.options.numPlays = this.options.numPlays || 0;
+    this.options.delay = this.options.delay || 100;
+  }
+
+  this.optimizer = new Optimizer(this.options);
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.GIFWriter.prototype" id="apidoc.module.ttystudio.GIFWriter.prototype">module ttystudio.GIFWriter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.compress" id="apidoc.element.ttystudio.GIFWriter.prototype.compress">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>compress
+        <span class="apidocSignatureSpan">(frame, imgBuffer, codeSize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compress = function (frame, imgBuffer, codeSize) {
+  var enc = new LZWEncoder(frame.width, frame.height, imgBuffer, codeSize);
+  enc.encode(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.createPalette" id="apidoc.element.ttystudio.GIFWriter.prototype.createPalette">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>createPalette
+        <span class="apidocSignatureSpan">(frames)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPalette = function (frames) {
+  var lookup = {}
+    , overflow = 0
+    , i = 0
+    , table;
+
+  frames.forEach(function(frame, frameIndex) {
+    if (!frame.data &#x26;&#x26; this.options.convertFrame) {
+      frame = this.options.convertFrame(frame);
+    }
+    if (frames.length &#x3e; 1) {
+      if (frameIndex % 30 === 0) {
+        this.out(&#x27;.&#x27;);
+      }
+    }
+    table = frame.data.reduce(function(table, line) {
+      var colors = line.reduce(function(out, pixel) {
+        [pixel, pixel.fg].forEach(function(pixel) {
+          if (!pixel) return;
+
+          var hash = (pixel.r &#x3c;&#x3c; 16)
+            | (pixel.g &#x3c;&#x3c; 8)
+            | (pixel.b &#x3c;&#x3c; 0);
+
+          if (lookup[hash] != null) {
+            return;
+          }
+
+          if (i + 1 &#x3e; 256) {
+            overflow++;
+            lookup[hash] = 1;
+            return;
+          }
+
+          lookup[hash] = i;
+          i++;
+          overflow = i;
+
+          out.push({
+            r: pixel.r,
+            g: pixel.g,
+            b: pixel.b,
+            a: 255
+          });
+        });
+        return out;
+      }, []);
+      return table.concat(colors);
+    }, table || []);
+  }, this);
+
+  if (frames.length &#x3e; 1) {
+    this.out(&#x27;\n&#x27;);
+  }
+
+  while (table.length &#x3c; 2 || (table.length &#x26; (table.length - 1))) {
+    table.push({ r: 0, g: 0, b: 0, a: 255 });
+    if (lookup[0] == null) lookup[0] = table.length - 1;
+  }
+
+  table.size = 1;
+  while (table.size &#x3c; 8 &#x26;&#x26; (1 &#x3c;&#x3c; table.size) !== table.length) {
+    table.size++;
+  }
+  table.size = (table.size - 1) &#x26; 0x07;
+
+  table.lookup = lookup;
+
+  table.overflow = overflow;
+
+  return table;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.log" id="apidoc.element.ttystudio.GIFWriter.prototype.log">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+  if (!this.options.log) return;
+  return console.error.apply(console, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.lookupPalette" id="apidoc.element.ttystudio.GIFWriter.prototype.lookupPalette">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>lookupPalette
+        <span class="apidocSignatureSpan">(table, pixel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lookupPalette = function (table, pixel) {
+  return table.lookup[(pixel.r &#x3c;&#x3c; 16) | (pixel.g &#x3c;&#x3c; 8) | (pixel.b &#x3c;&#x3c; 0)];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.out" id="apidoc.element.ttystudio.GIFWriter.prototype.out">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>out
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">out = function (text) {
+  if (!this.options.log) return;
+  return process.stderr.write(text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.write" id="apidoc.element.ttystudio.GIFWriter.prototype.write">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function () {
+  var i = 0
+    , frame;
+
+  this.optimizer.reset();
+
+  this.log(&#x27;writing head&#x27;);
+  this.writeHead();
+
+  if (this.options.numPlays != null) {
+    this.log(&#x27;writing netscape looping extension&#x27;);
+    this.writeNetscape();
+  }
+
+  this.log(&#x27;writing GCE&#x27;);
+  this.writeGCE();
+
+  while (this.frames.length) {
+    this.log(&#x27;writing frame %d - %d left&#x27;, i, this.frames.length);
+    frame = this.frames.shift();
+    this.writeFrame(frame, i++);
+  }
+
+  this.log(&#x27;writing eof&#x27;);
+  this.writeEOF();
+
+  if (this.stream) return;
+  return this.output.slice(0, this.offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ writer.on(&#x27;done&#x27;, function(event) {
+   log(&#x27;stream: &#x27; + event);
+   log(&#x27;wrote image to %s&#x27;, output);
+   return callback();
+ });
+
+ log(&#x27;writing image&#x27;);
+ writer.<span class="apidocCodeKeywordSpan">write</span>();
+
+ return writer;
+}
+
+/**
+* Helpers
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.write16" id="apidoc.element.ttystudio.GIFWriter.prototype.write16">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>write16
+        <span class="apidocSignatureSpan">(ch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write16 = function (ch) {
+  if (this.stream) {
+    var b = new Buffer(2);
+    b.writeUInt16LE(ch, 0);
+    return this.stream.write(b);
+  }
+  this.output.writeUInt16LE(ch, this.offset);
+  this.offset += 2;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.write8" id="apidoc.element.ttystudio.GIFWriter.prototype.write8">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>write8
+        <span class="apidocSignatureSpan">(ch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write8 = function (ch) {
+  if (this.stream) {
+    var b = new Buffer(1);
+    b.writeUInt8(ch, 0);
+    return this.stream.write(b);
+  }
+  this.output.writeUInt8(ch, this.offset);
+  this.offset += 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.writeByte" id="apidoc.element.ttystudio.GIFWriter.prototype.writeByte">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeByte
+        <span class="apidocSignatureSpan">(ch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeByte = function (ch) {
+  this.write8(ch);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.writeBytes" id="apidoc.element.ttystudio.GIFWriter.prototype.writeBytes">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeBytes
+        <span class="apidocSignatureSpan">(array, offset, length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeBytes = function (array, offset, length) {
+  for (var l = length || array.length, i = offset || 0; i &#x3c; l; i++) {
+    this.write8(array[i]);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.writeEOF" id="apidoc.element.ttystudio.GIFWriter.prototype.writeEOF">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeEOF
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeEOF = function () {
+  var self = this;
+
+  this.write8(0x3b);
+
+  if (this.stream &#x26;&#x26; this.stream !== process.stdout) {
+    try {
+      this.stream.end();
+    } catch (e) {
+      nextTick(function() {
+        self.emit(&#x27;done&#x27;, &#x27;eof&#x27;);
+      });
+    }
+  } else {
+    nextTick(function() {
+      self.emit(&#x27;done&#x27;, &#x27;eof&#x27;);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.writeFrame" id="apidoc.element.ttystudio.GIFWriter.prototype.writeFrame">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeFrame
+        <span class="apidocSignatureSpan">(frame, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFrame = function (frame, i) {
+  var self = this
+    , flags
+    , j
+    , color
+    , imgBuffer
+    , numColors
+    , codeSize;
+
+  if (!frame.data &#x26;&#x26; this.options.convertFrame) {
+    frame = this.options.convertFrame(frame);
+  }
+
+  frame = this.optimizer.offset(frame);
+
+  this.write8(0x2c);
+  this.write16(frame.left || 0);
+  this.write16(frame.top || 0);
+  frame.width = frame.data[0].length;
+  this.write16(frame.width);
+  frame.height = frame.data.length;
+  this.write16(frame.height);
+  if (this.gct.global) {
+    frame.lct = null;
+  } else {
+    frame.lct = i &#x3e; 0 ? this.createPalette([frame]) : null;
+  }
+  flags = (frame.lct ? 0x80 : 0)
+    | (frame.ilace ? 0x40 : 0)
+    | (frame.lct ? frame.lct.size : 0);
+  this.write8(flags);
+
+  if (frame.lct) {
+    for (j = 0; j &#x3c; frame.lct.length; j++) {
+      color = frame.lct[j];
+      this.write8(color.r);
+      this.write8(color.g);
+      this.write8(color.b);
+    }
+  }
+
+  imgBuffer = new Buffer(frame.data.reduce(function(out, line) {
+    return out.concat(line.map(function(pixel) {
+      return self.lookupPalette(frame.lct || self.gct, pixel);
+    }));
+  }, []));
+
+<span class="apidocCodeCommentSpan">  /**
+   * From: https://github.com/deanm/omggif
+   * omggif is a JavaScript implementation of a GIF 89a encoder and decoder.
+   * https://github.com/deanm/omggif
+   *
+   * (c) Dean McNamee &#x3c;dean@gmail.com&#x3e;, 2013.
+   *
+   * Permission is hereby granted, free of charge, to any person obtaining a
+   * copy of this software and associated documentation files (the &#x22;Software&#x22;),
+   * to deal in the Software without restriction, including without limitation
+   * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+   * and/or sell copies of the Software, and to permit persons to whom the
+   * Software is furnished to do so, subject to the following conditions:
+   *
+   * The above copyright notice and this permission notice shall be included in
+   * all copies or substantial portions of the Software.
+   *
+   * THE SOFTWARE IS PROVIDED &#x22;AS IS&#x22;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+   * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   * DEALINGS IN THE SOFTWARE.
+   */
+</span>  numColors = (frame.lct || this.gct).length;
+  if (numColors &#x3c; 2 || numColors &#x3e; 256 || (numColors &#x26; (numColors - 1))) {
+    throw new Error(&#x27;Invalid code/color length, must be power of 2 and 2 .. 256: &#x27; + numColors);
+  }
+  codeSize = 0;
+  while (numColors &#x3e;&#x3e;= 1) ++codeSize;
+  numColors = 1 &#x3c;&#x3c; codeSize;
+  codeSize = codeSize &#x3c; 2 ? 2 : codeSize
+
+  this.compress(frame, imgBuffer, codeSize);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.writeGCE" id="apidoc.element.ttystudio.GIFWriter.prototype.writeGCE">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeGCE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeGCE = function () {
+  var options = this.options
+    , flags;
+
+  this.write8(0x21); // ext header
+  this.write8(0xf9); // label - GCE
+  this.write8(0x04); // size
+  flags = ((options.disposeMethod &#x26; 0x07) &#x3c;&#x3c; 2)
+    | ~~options.useTransparent;
+  this.write8(flags);
+  this.write16(Math.round((options.delay | 0) / 10));
+  this.write8(options.transparentColor | 0);
+  this.write8(0x00); // terminator
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.writeHead" id="apidoc.element.ttystudio.GIFWriter.prototype.writeHead">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeHead
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeHead = function () {
+  var options = this.options
+    , flags
+    , i
+    , color
+    , frame
+    , gct;
+
+  if (!options.lct) {
+    this.log(&#x27;building gct (may take a while)&#x27;);
+
+    gct = this.createPalette(this.frames);
+
+    if (gct.overflow &#x3c;= 256) {
+      this.log(&#x27;gct is only &#x27; + gct.overflow + &#x27; colors: using gct&#x27;);
+      gct.global = true;
+    } else {
+      this.log(&#x27;gct has &#x27; + gct.overflow + &#x27; colors: falling back to lct&#x27;);
+      gct.global = false;
+    }
+  } else {
+    gct = [];
+  }
+
+  this.writeText(&#x27;GIF89a&#x27;);
+
+  frame = this.frames[0];
+  if (!frame.data &#x26;&#x26; this.options.convertFrame) {
+    frame = this.options.convertFrame(frame);
+  }
+
+  this.width = frame.data[0].length;
+  this.write16(this.width);
+  this.height = frame.data.length;
+  this.write16(this.height);
+  this.gct = gct.global ? gct : this.createPalette([frame]);
+  flags = (this.gct ? 0x80 : 0)
+    | (this.gct ? this.gct.size : 0);
+  this.write8(flags);
+  this.write8(options.bgIndex || 0);
+  this.write8(options.aspect || 0);
+
+  if (this.gct) {
+    for (i = 0; i &#x3c; this.gct.length; i++) {
+      color = this.gct[i];
+      this.write8(color.r);
+      this.write8(color.g);
+      this.write8(color.b);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.writeNetscape" id="apidoc.element.ttystudio.GIFWriter.prototype.writeNetscape">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeNetscape
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeNetscape = function () {
+  var options = this.options;
+  this.write8(0x21); // ext header
+  this.write8(0xff); // label - APC
+  this.write8(11); // size
+  this.writeText(&#x27;NETSCAPE2.0&#x27;);
+  this.write8(3); // subblock size
+  this.write8(1); // subblock id
+  this.write16(options.numPlays);
+  this.write8(0x00); // block terminator
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.GIFWriter.prototype.writeText" id="apidoc.element.ttystudio.GIFWriter.prototype.writeText">
+        function <span class="apidocSignatureSpan">ttystudio.GIFWriter.prototype.</span>writeText
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeText = function (text) {
+  if (this.stream) {
+    return this.stream.write(text, &#x27;ascii&#x27;);
+  }
+  this.output.write(text, this.offset, &#x27;ascii&#x27;);
+  this.offset += Buffer.byteLength(text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.SGRWriter" id="apidoc.module.ttystudio.SGRWriter">module ttystudio.SGRWriter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.SGRWriter" id="apidoc.element.ttystudio.SGRWriter.SGRWriter">
+        function <span class="apidocSignatureSpan">ttystudio.</span>SGRWriter
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SGRWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof SGRWriter)) {
+    return new SGRWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.options = options || {};
+  this.options.convertFrame = this.convertFrame.bind(this);
+
+  if (this.options.png) {
+    this.writer = new PNGWriter(frames, this.options);
+  } else {
+    this.writer = new GIFWriter(frames, this.options);
+  }
+
+  this.writer.on(&#x27;done&#x27;, function(event) {
+    self.emit(&#x27;done&#x27;, event);
+  });
+
+  this.ratio = this.options.ratio || {
+    width: 8,
+    height: 15
+  };
+
+  this.options.font = this.options.font
+    || __dirname + &#x27;/../fonts/ter-u14n.json&#x27;;
+  this.options.fontBold = this.options.fontBold
+    || __dirname + &#x27;/../fonts/ter-u14b.json&#x27;;
+
+  this.font = this.loadFont(this.options.font);
+  this.fontBold = this.loadFont(this.options.fontBold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.GIFWriter" id="apidoc.element.ttystudio.SGRWriter.GIFWriter">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>GIFWriter
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GIFWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof GIFWriter)) {
+    return new GIFWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  if (this.frames.length &#x3e; 1) {
+    this.options.numPlays = this.options.numPlays || 0;
+    this.options.delay = this.options.delay || 100;
+  }
+
+  this.optimizer = new Optimizer(this.options);
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.PNGWriter" id="apidoc.element.ttystudio.SGRWriter.PNGWriter">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>PNGWriter
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GIFWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof GIFWriter)) {
+    return new GIFWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  if (this.frames.length &#x3e; 1) {
+    this.options.numPlays = this.options.numPlays || 0;
+    this.options.delay = this.options.delay || 100;
+  }
+
+  this.optimizer = new Optimizer(this.options);
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.buffer" id="apidoc.element.ttystudio.SGRWriter.buffer">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>buffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ExpandingBuffer() {
+  var self = this;
+  if (!(self instanceof ExpandingBuffer)) {
+    self = Object.create(ExpandingBuffer.prototype);
+  }
+  if (Buffer.isBuffer(arguments[0])) {
+    self.buffer = arguments[0];
+  } else {
+    self.buffer = Buffer.apply(null, arguments);
+  }
+  return self;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.compile" id="apidoc.element.ttystudio.SGRWriter.compile">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>compile
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compile(options, callback) {
+  var input = options.files[0]
+    , output = options.o || options.output || options.files[1]
+    , stream
+    , frames
+    , writer;
+
+  if (output) {
+    if (output === &#x27;-&#x27;) {
+      stream = process.stdout;
+      output = &#x27;[stdout]&#x27;;
+    } else {
+      stream = fs.createWriteStream(output);
+    }
+  }
+
+  options.stream = stream;
+  options.delay = options.delay || 100;
+  options.png = options.png || /\.png$/i.test(output);
+
+  if (Array.isArray(input)) {
+    frames = input;
+  } else if (typeof input === &#x27;string&#x27;) {
+    if (~input.indexOf(&#x27;.json&#x27;)) {
+      log(&#x27;parsing json&#x27;);
+      frames = JSON.parse(fs.readFileSync(input, &#x27;utf8&#x27;));
+    } else {
+      log(&#x27;reading file&#x27;);
+      frames = [fs.readFileSync(input, &#x27;utf8&#x27;)];
+    }
+  } else {
+    return callback(new Error(&#x27;No input file specified.&#x27;));
+  }
+
+  if (options.range) {
+    frames = frames.slice(options.range[0], options.range[1]);
+  }
+
+  log(&#x27;initializing writer&#x27;);
+  writer = new SGRWriter(frames, options);
+
+  writer.on(&#x27;done&#x27;, function(event) {
+    log(&#x27;stream: &#x27; + event);
+    log(&#x27;wrote image to %s&#x27;, output);
+    return callback();
+  });
+
+  log(&#x27;writing image&#x27;);
+  writer.write();
+
+  return writer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.gif" id="apidoc.element.ttystudio.SGRWriter.gif">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>gif
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GIFWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof GIFWriter)) {
+    return new GIFWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  if (this.frames.length &#x3e; 1) {
+    this.options.numPlays = this.options.numPlays || 0;
+    this.options.delay = this.options.delay || 100;
+  }
+
+  this.optimizer = new Optimizer(this.options);
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.optimize" id="apidoc.element.ttystudio.SGRWriter.optimize">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>optimize
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Optimizer(options) {
+  this.options = options || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.play" id="apidoc.element.ttystudio.SGRWriter.play">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>play
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function play(options, callback) {
+  var frames = JSON.parse(fs.readFileSync(options.files[0], &#x27;utf8&#x27;));
+
+  var screen = blessed.screen({
+    smartCSR: true
+  });
+
+  screen.on(&#x27;C-c&#x27;, function() {
+    process.exit(0);
+  });
+
+  var timer = setInterval(function() {
+    if (!frames.length) {
+      clearInterval(timer);
+      screen.destroy();
+      return callback();
+    }
+    screen.lines = frames.shift();
+    screen.lines.forEach(function(line) {
+      line.dirty = true;
+    });
+    screen.render();
+  }, options.delay || 100);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.png" id="apidoc.element.ttystudio.SGRWriter.png">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>png
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PNGWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof PNGWriter)) {
+    return new PNGWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  this.optimizer = new Optimizer(this.options);
+
+  this.cbuff = new ExpandingBuffer(256);
+  this.seq = 0;
+  this.bitDepth = 8;
+  this.coffset = -1;
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.record" id="apidoc.element.ttystudio.SGRWriter.record">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>record
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function record(options, callback) {
+  var frames = []
+    , out
+    , termName = &#x27;xterm&#x27;
+    , screen
+    , tty
+    , timeout;
+
+  try {
+    out = cp.execSync(&#x27;tput -Txterm-256color longname&#x27;, { encoding: &#x27;utf8&#x27; });
+    if (~out.indexOf(&#x27;256 colors&#x27;)) {
+      termName = &#x27;xterm-256color&#x27;;
+    }
+  } catch (e) {
+    ;
+  }
+
+  screen = blessed.screen({
+    smartCSR: true
+  });
+
+  tty = blessed.terminal({
+    parent: screen,
+    cursorBlink: false,
+    screenKeys: false,
+    left: 0,
+    top: 0,
+    term: options.term || termName,
+    width: screen.width,
+    height: screen.height
+  });
+
+  function screenshot() {
+    var lines = []
+      , y
+      , line
+      , cx
+      , x
+      , cell
+      , attr
+      , ch;
+
+    for (y = 0; y &#x3c; screen.lines.length; y++) {
+      line = [];
+      if (y === tty.term.y
+          &#x26;&#x26; tty.term.cursorState
+          &#x26;&#x26; (tty.term.ydisp === tty.term.ybase || tty.term.selectMode)
+          &#x26;&#x26; !tty.term.cursorHidden) {
+        cx = tty.term.x;
+      } else {
+        cx = -1;
+      }
+      for (x = 0; x &#x3c; screen.lines[y].length; x++) {
+        cell = screen.lines[y][x];
+        attr = cell[0];
+        ch = cell[1];
+        if (x === cx) attr = (0x1ff &#x3c;&#x3c; 9) | 15;
+        line.push([attr, ch]);
+      }
+      lines.push(line);
+    }
+    frames.push(lines);
+  }
+
+  if (!options.screenshot) {
+    timeout = setInterval(screenshot, options.interval || 100);
+    if (timeout.unref) timeout.unref();
+  } else {
+    screen.key(options.screenshotKey || &#x27;C-p&#x27;, screenshot);
+  }
+
+  function done() {
+    if (!done.called) {
+      done.called = true;
+
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+
+      screen.destroy();
+
+      callback(null, frames);
+    }
+  }
+
+  screen.key(options.key || &#x27;C-q&#x27;, done);
+
+  process.on(&#x27;exit&#x27;, done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.writer" id="apidoc.element.ttystudio.SGRWriter.writer">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.</span>writer
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SGRWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof SGRWriter)) {
+    return new SGRWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.options = options || {};
+  this.options.convertFrame = this.convertFrame.bind(this);
+
+  if (this.options.png) {
+    this.writer = new PNGWriter(frames, this.options);
+  } else {
+    this.writer = new GIFWriter(frames, this.options);
+  }
+
+  this.writer.on(&#x27;done&#x27;, function(event) {
+    self.emit(&#x27;done&#x27;, event);
+  });
+
+  this.ratio = this.options.ratio || {
+    width: 8,
+    height: 15
+  };
+
+  this.options.font = this.options.font
+    || __dirname + &#x27;/../fonts/ter-u14n.json&#x27;;
+  this.options.fontBold = this.options.fontBold
+    || __dirname + &#x27;/../fonts/ter-u14b.json&#x27;;
+
+  this.font = this.loadFont(this.options.font);
+  this.fontBold = this.loadFont(this.options.fontBold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.SGRWriter.prototype" id="apidoc.module.ttystudio.SGRWriter.prototype">module ttystudio.SGRWriter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.addBorder" id="apidoc.element.ttystudio.SGRWriter.prototype.addBorder">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>addBorder
+        <span class="apidocSignatureSpan">(bmp, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addBorder = function (bmp, options) {
+  var options = options || this.options.border || {}
+    , width = options.width
+    , color = options.color || {}
+    , tline
+    , bline
+    , w
+    , x
+    , y;
+
+  width = width != null ? width : 1;
+  color.r = color.r != null ? color.r : 255;
+  color.g = color.g != null ? color.g : 255;
+  color.b = color.b != null ? color.b : 255;
+  color.a = color.a != null ? color.a : 255;
+
+  // top and bottom
+  for (w = 0; w &#x3c; width; w++) {
+    tline = [];
+    bline = [];
+    for (x = 0; x &#x3c; bmp[0].length; x++) {
+      tline.push({
+        r: color.r,
+        g: color.g,
+        b: color.b,
+        a: color.a,
+        ch: &#x27; &#x27;,
+        fg: { r: color.r, g: color.g, b: color.b, a: color.a }
+      });
+      bline.push({
+        r: color.r,
+        g: color.g,
+        b: color.b,
+        a: color.a,
+        ch: &#x27; &#x27;,
+        fg: { r: color.r, g: color.g, b: color.b, a: color.a }
+      });
+    }
+    bmp.unshift(tline);
+    bmp.push(bline);
+  }
+
+  // left/right
+  for (w = 0; w &#x3c; width; w++) {
+    for (y = 0; y &#x3c; bmp.length; y++) {
+      bmp[y].unshift({
+        r: color.r,
+        g: color.g,
+        b: color.b,
+        a: color.a,
+        ch: &#x27; &#x27;,
+        fg: { r: color.r, g: color.g, b: color.b, a: color.a }
+      });
+      bmp[y].push({
+        r: color.r,
+        g: color.g,
+        b: color.b,
+        a: color.a,
+        ch: &#x27; &#x27;,
+        fg: { r: color.r, g: color.g, b: color.b, a: color.a }
+      });
+    }
+  }
+
+  return bmp;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.addChars" id="apidoc.element.ttystudio.SGRWriter.prototype.addChars">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>addChars
+        <span class="apidocSignatureSpan">(bmp, chs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addChars = function (bmp, chs) {
+  var i
+    , cell
+    , x
+    , y
+    , cx
+    , cy;
+
+  for (i = 0; i &#x3c; chs.length; i++) {
+    cell = chs[i];
+    x = cell.x;
+    y = cell.y;
+
+    for (cx = 0; cx &#x3c; this.ratio.width; cx++) {
+      for (cy = 0; cy &#x3c; this.ratio.height; cy++) {
+        bmp[y + cy][x + cx] = this.convertCharToPixels(cx, cy, cell, bmp[y + cy][x + cx]);
+      }
+    }
+  }
+
+  return bmp;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.convertCharToPixels" id="apidoc.element.ttystudio.SGRWriter.prototype.convertCharToPixels">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>convertCharToPixels
+        <span class="apidocSignatureSpan">(x, y, cell, pixel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convertCharToPixels = function (x, y, cell, pixel) {
+  var font = cell.bold ? this.fontBold : this.font
+    , coord;
+
+  if (!font[cell.ch]) return pixel;
+
+  coord = font[cell.ch][y][x];
+
+  if (coord === 0) return pixel;
+
+  return { r: cell.r, g: cell.g, b: cell.b, a: 255, ch: cell.ch, fg: pixel.fg };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.convertFrame" id="apidoc.element.ttystudio.SGRWriter.prototype.convertFrame">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>convertFrame
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convertFrame = function (frame) {
+  if (!frame.data) {
+    if (typeof frame === &#x27;string&#x27; || typeof frame[0] === &#x27;string&#x27;) {
+      frame = this.parseSGR(frame);
+    }
+    if (typeof frame[0][0][1] === &#x27;string&#x27;) {
+      frame = this.parseCellmap(frame);
+    }
+  }
+  return frame;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.loadFont" id="apidoc.element.ttystudio.SGRWriter.prototype.loadFont">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>loadFont
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFont = function (filename) {
+  var self = this
+    , data
+    , font;
+
+  data = JSON.parse(fs.readFileSync(filename, &#x27;utf8&#x27;));
+
+  this.ratio.width = data.width;
+  this.ratio.height = data.height;
+
+  function convertLetter(ch, lines) {
+    var line, i;
+
+    while (lines.length &#x3e; self.ratio.height) {
+      lines.shift();
+      lines.pop();
+    }
+
+    lines = lines.map(function(line) {
+      var chs = line.split(&#x27;&#x27;);
+      chs = chs.map(function(ch) {
+        return ch === &#x27; &#x27; ? 0 : 1;
+      });
+      while (chs.length &#x3c; self.ratio.width) {
+        chs.push(0);
+      }
+      return chs;
+    });
+
+    while (lines.length &#x3c; self.ratio.height) {
+      line = [];
+      for (i = 0; i &#x3c; self.ratio.width; i++) {
+        line.push(0);
+      }
+      lines.push(line);
+    }
+
+    return lines;
+  }
+
+  font = Object.keys(data.glyphs).reduce(function(out, ch) {
+    var lines = data.glyphs[ch].map;
+    out[ch] = convertLetter(ch, lines);
+    return out;
+  }, {});
+
+  delete font[&#x27; &#x27;];
+
+  return font;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.log" id="apidoc.element.ttystudio.SGRWriter.prototype.log">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+  if (!this.options.log) return;
+  return console.error.apply(console, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.parseCellmap" id="apidoc.element.ttystudio.SGRWriter.prototype.parseCellmap">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>parseCellmap
+        <span class="apidocSignatureSpan">(cellmap)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseCellmap = function (cellmap) {
+  var bmp = []
+    , chs = []
+    , i
+    , cline
+    , bline
+    , j
+    , cell
+    , attr
+    , ch
+    , b
+    , f
+    , bg
+    , fg
+    , tmp
+    , x
+    , y
+    , cb
+    , ci
+    , cc;
+
+  for (i = 0; i &#x3c; cellmap.length; i++) {
+    cline = cellmap[i];
+    bline = [];
+
+    for (j = 0; j &#x3c; cline.length; j++) {
+      cell = cline[j];
+      attr = cell[0];
+      ch = cell[1];
+
+      b = attr &#x26; 0x1ff;
+      f = (attr &#x3e;&#x3e; 9) &#x26; 0x1ff;
+      bg = blessed.colors.vcolors[b];
+      fg = blessed.colors.vcolors[f];
+
+      if (b === 0x1ff) bg = [0, 0, 0];
+      if (f === 0x1ff) fg = [255, 255, 255];
+
+      if (ch !== &#x27; &#x27; &#x26;&#x26; !this.font[ch]) {
+        tmp = bg;
+        bg = fg;
+        fg = tmp;
+      }
+
+      if (ch !== &#x27; &#x27; &#x26;&#x26; this.font[ch]) {
+        chs.push({
+          x: j * this.ratio.width,
+          y: i * this.ratio.height,
+          ch: ch,
+          r: fg[0],
+          g: fg[1],
+          b: fg[2],
+          a: 255,
+          invisible: !!((attr &#x3e;&#x3e; 18) &#x26; 16),
+          inverse: !!((attr &#x3e;&#x3e; 18) &#x26; 8),
+          blink: !!((attr &#x3e;&#x3e; 18) &#x26; 4),
+          underline: !!((attr &#x3e;&#x3e; 18) &#x26; 2),
+          bold: !!((attr &#x3e;&#x3e; 18) &#x26; 1)
+        });
+      }
+
+      for (x = 0; x &#x3c; this.ratio.width; x++) {
+        bline.push({
+          r: bg[0],
+          g: bg[1],
+          b: bg[2],
+          a: 255,
+          ch: ch,
+          fg: { r: fg[0], g: fg[1], b: fg[2], a: 255 }
+        });
+      }
+    }
+
+    for (y = 0; y &#x3c; this.ratio.height; y++) {
+      cb = [];
+      for (ci = 0; ci &#x3c; bline.length; ci++) {
+        cc = bline[ci];
+        cb.push({
+          r: cc.r,
+          g: cc.g,
+          b: cc.b,
+          a: cc.a,
+          ch: cc.ch,
+          fg: { r: cc.fg.r, g: cc.fg.g, b: cc.fg.b, a: cc.fg.a }
+        });
+      }
+      bmp.push(cb);
+    }
+  }
+
+  bmp = this.addChars(bmp, chs);
+
+  if (this.options.border) {
+    bmp = this.addBorder(bmp, this.options.border);
+  }
+
+  return {
+    left: 0,
+    top: 0,
+    data: bmp
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.parseSGR" id="apidoc.element.ttystudio.SGRWriter.prototype.parseSGR">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>parseSGR
+        <span class="apidocSignatureSpan">(ANSI)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseSGR = function (ANSI) {
+  var dattr = (0 &#x3c;&#x3c; 18) | (0x1ff &#x3c;&#x3c; 9) | (0x1ff &#x3c; 0)
+    , attr = dattr
+    , cellmap
+    , i
+    , line
+    , cline
+    , j
+    , ch
+    , c;
+
+  if (typeof ANSI === &#x27;string&#x27;) {
+    ANSI = ANSI.trim().split(&#x27;\n&#x27;);
+  }
+
+  cellmap = [];
+  for (i = 0; i &#x3c; ANSI.length; i++) {
+    line = ANSI[i];
+    cline = [];
+    for (j = 0; j &#x3c; line.length; j++) {
+      ch = line[j];
+      while (ch === &#x27;\x1b&#x27;) {
+        if (c = /^\x1b\[[\d;]*m/.exec(line.substring(j))) {
+          attr = blessed.screen.prototype.attrCode(c[0], attr, dattr);
+          j += c[0].length;
+          ch = line[j];
+        } else {
+          break;
+        }
+      }
+      if (ch) {
+        cline.push([attr, ch]);
+      }
+    }
+    cellmap.push(cline);
+  }
+
+  return cellmap;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.SGRWriter.prototype.write" id="apidoc.element.ttystudio.SGRWriter.prototype.write">
+        function <span class="apidocSignatureSpan">ttystudio.SGRWriter.prototype.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function () {
+  return this.writer.write();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ writer.on(&#x27;done&#x27;, function(event) {
+   log(&#x27;stream: &#x27; + event);
+   log(&#x27;wrote image to %s&#x27;, output);
+   return callback();
+ });
+
+ log(&#x27;writing image&#x27;);
+ writer.<span class="apidocCodeKeywordSpan">write</span>();
+
+ return writer;
+}
+
+/**
+* Helpers
+*/
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.buffer" id="apidoc.module.ttystudio.buffer">module ttystudio.buffer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.buffer" id="apidoc.element.ttystudio.buffer.buffer">
+        function <span class="apidocSignatureSpan">ttystudio.</span>buffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ExpandingBuffer() {
+  var self = this;
+  if (!(self instanceof ExpandingBuffer)) {
+    self = Object.create(ExpandingBuffer.prototype);
+  }
+  if (Buffer.isBuffer(arguments[0])) {
+    self.buffer = arguments[0];
+  } else {
+    self.buffer = Buffer.apply(null, arguments);
+  }
+  return self;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.buffer.prototype" id="apidoc.module.ttystudio.buffer.prototype">module ttystudio.buffer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.asciiSlice" id="apidoc.element.ttystudio.buffer.prototype.asciiSlice">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>asciiSlice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asciiSlice = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.asciiWrite" id="apidoc.element.ttystudio.buffer.prototype.asciiWrite">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>asciiWrite
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asciiWrite = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.base64Slice" id="apidoc.element.ttystudio.buffer.prototype.base64Slice">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>base64Slice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base64Slice = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.base64Write" id="apidoc.element.ttystudio.buffer.prototype.base64Write">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>base64Write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base64Write = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.compare" id="apidoc.element.ttystudio.buffer.prototype.compare">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>compare
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compare = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.copy" id="apidoc.element.ttystudio.buffer.prototype.copy">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>copy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.equals" id="apidoc.element.ttystudio.buffer.prototype.equals">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>equals
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equals = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.fill" id="apidoc.element.ttystudio.buffer.prototype.fill">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>fill
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fill = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.hexSlice" id="apidoc.element.ttystudio.buffer.prototype.hexSlice">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>hexSlice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hexSlice = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.hexWrite" id="apidoc.element.ttystudio.buffer.prototype.hexWrite">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>hexWrite
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hexWrite = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.includes" id="apidoc.element.ttystudio.buffer.prototype.includes">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>includes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">includes = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.indexOf" id="apidoc.element.ttystudio.buffer.prototype.indexOf">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>indexOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indexOf = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+options.stream = stream;
+options.delay = options.delay || 100;
+options.png = options.png || /\.png$/i.test(output);
+
+if (Array.isArray(input)) {
+  frames = input;
+} else if (typeof input === &#x27;string&#x27;) {
+  if (~input.<span class="apidocCodeKeywordSpan">indexOf</span>(&#x27;.json&#x27;)) {
+    log(&#x27;parsing json&#x27;);
+    frames = JSON.parse(fs.readFileSync(input, &#x27;utf8&#x27;));
+  } else {
+    log(&#x27;reading file&#x27;);
+    frames = [fs.readFileSync(input, &#x27;utf8&#x27;)];
+  }
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.inspect" id="apidoc.element.ttystudio.buffer.prototype.inspect">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>inspect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspect = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.lastIndexOf" id="apidoc.element.ttystudio.buffer.prototype.lastIndexOf">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>lastIndexOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lastIndexOf = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.latin1Slice" id="apidoc.element.ttystudio.buffer.prototype.latin1Slice">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>latin1Slice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">latin1Slice = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.latin1Write" id="apidoc.element.ttystudio.buffer.prototype.latin1Write">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>latin1Write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">latin1Write = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.offset" id="apidoc.element.ttystudio.buffer.prototype.offset">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>offset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">offset = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.parent" id="apidoc.element.ttystudio.buffer.prototype.parent">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>parent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parent = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readDoubleBE" id="apidoc.element.ttystudio.buffer.prototype.readDoubleBE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readDoubleBE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readDoubleBE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readDoubleLE" id="apidoc.element.ttystudio.buffer.prototype.readDoubleLE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readDoubleLE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readDoubleLE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readFloatBE" id="apidoc.element.ttystudio.buffer.prototype.readFloatBE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readFloatBE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readFloatBE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readFloatLE" id="apidoc.element.ttystudio.buffer.prototype.readFloatLE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readFloatLE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readFloatLE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readInt16BE" id="apidoc.element.ttystudio.buffer.prototype.readInt16BE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt16BE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readInt16BE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readInt16LE" id="apidoc.element.ttystudio.buffer.prototype.readInt16LE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt16LE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readInt16LE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readInt32BE" id="apidoc.element.ttystudio.buffer.prototype.readInt32BE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt32BE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readInt32BE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readInt32LE" id="apidoc.element.ttystudio.buffer.prototype.readInt32LE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt32LE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readInt32LE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readInt8" id="apidoc.element.ttystudio.buffer.prototype.readInt8">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readInt8
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readInt8 = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readIntBE" id="apidoc.element.ttystudio.buffer.prototype.readIntBE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readIntBE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readIntBE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readIntLE" id="apidoc.element.ttystudio.buffer.prototype.readIntLE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readIntLE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readIntLE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readUInt16BE" id="apidoc.element.ttystudio.buffer.prototype.readUInt16BE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt16BE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readUInt16BE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readUInt16LE" id="apidoc.element.ttystudio.buffer.prototype.readUInt16LE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt16LE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readUInt16LE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readUInt32BE" id="apidoc.element.ttystudio.buffer.prototype.readUInt32BE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt32BE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readUInt32BE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readUInt32LE" id="apidoc.element.ttystudio.buffer.prototype.readUInt32LE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt32LE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readUInt32LE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readUInt8" id="apidoc.element.ttystudio.buffer.prototype.readUInt8">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUInt8
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readUInt8 = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readUIntBE" id="apidoc.element.ttystudio.buffer.prototype.readUIntBE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUIntBE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readUIntBE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.readUIntLE" id="apidoc.element.ttystudio.buffer.prototype.readUIntLE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>readUIntLE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readUIntLE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.slice" id="apidoc.element.ttystudio.buffer.prototype.slice">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>slice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slice = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    frames = [fs.readFileSync(input, &#x27;utf8&#x27;)];
+  }
+} else {
+  return callback(new Error(&#x27;No input file specified.&#x27;));
+}
+
+if (options.range) {
+  frames = frames.<span class="apidocCodeKeywordSpan">slice</span>(options.range[0], options.range[1]);
+}
+
+log(&#x27;initializing writer&#x27;);
+writer = new SGRWriter(frames, options);
+
+writer.on(&#x27;done&#x27;, function(event) {
+  log(&#x27;stream: &#x27; + event);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.swap16" id="apidoc.element.ttystudio.buffer.prototype.swap16">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>swap16
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">swap16 = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.swap32" id="apidoc.element.ttystudio.buffer.prototype.swap32">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>swap32
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">swap32 = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.swap64" id="apidoc.element.ttystudio.buffer.prototype.swap64">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>swap64
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">swap64 = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.toJSON" id="apidoc.element.ttystudio.buffer.prototype.toJSON">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.toString" id="apidoc.element.ttystudio.buffer.prototype.toString">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.ucs2Slice" id="apidoc.element.ttystudio.buffer.prototype.ucs2Slice">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>ucs2Slice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ucs2Slice = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.ucs2Write" id="apidoc.element.ttystudio.buffer.prototype.ucs2Write">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>ucs2Write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ucs2Write = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.utf8Slice" id="apidoc.element.ttystudio.buffer.prototype.utf8Slice">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>utf8Slice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utf8Slice = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.utf8Write" id="apidoc.element.ttystudio.buffer.prototype.utf8Write">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>utf8Write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utf8Write = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.write" id="apidoc.element.ttystudio.buffer.prototype.write">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ writer.on(&#x27;done&#x27;, function(event) {
+   log(&#x27;stream: &#x27; + event);
+   log(&#x27;wrote image to %s&#x27;, output);
+   return callback();
+ });
+
+ log(&#x27;writing image&#x27;);
+ writer.<span class="apidocCodeKeywordSpan">write</span>();
+
+ return writer;
+}
+
+/**
+* Helpers
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeDoubleBE" id="apidoc.element.ttystudio.buffer.prototype.writeDoubleBE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeDoubleBE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeDoubleBE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeDoubleLE" id="apidoc.element.ttystudio.buffer.prototype.writeDoubleLE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeDoubleLE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeDoubleLE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeFloatBE" id="apidoc.element.ttystudio.buffer.prototype.writeFloatBE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeFloatBE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFloatBE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeFloatLE" id="apidoc.element.ttystudio.buffer.prototype.writeFloatLE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeFloatLE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFloatLE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeInt16BE" id="apidoc.element.ttystudio.buffer.prototype.writeInt16BE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt16BE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeInt16BE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeInt16LE" id="apidoc.element.ttystudio.buffer.prototype.writeInt16LE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt16LE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeInt16LE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeInt32BE" id="apidoc.element.ttystudio.buffer.prototype.writeInt32BE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt32BE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeInt32BE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeInt32LE" id="apidoc.element.ttystudio.buffer.prototype.writeInt32LE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt32LE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeInt32LE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeInt8" id="apidoc.element.ttystudio.buffer.prototype.writeInt8">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeInt8
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeInt8 = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeIntBE" id="apidoc.element.ttystudio.buffer.prototype.writeIntBE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeIntBE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeIntBE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeIntLE" id="apidoc.element.ttystudio.buffer.prototype.writeIntLE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeIntLE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeIntLE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeUInt16BE" id="apidoc.element.ttystudio.buffer.prototype.writeUInt16BE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt16BE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeUInt16BE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeUInt16LE" id="apidoc.element.ttystudio.buffer.prototype.writeUInt16LE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt16LE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeUInt16LE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeUInt32BE" id="apidoc.element.ttystudio.buffer.prototype.writeUInt32BE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt32BE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeUInt32BE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeUInt32LE" id="apidoc.element.ttystudio.buffer.prototype.writeUInt32LE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt32LE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeUInt32LE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeUInt8" id="apidoc.element.ttystudio.buffer.prototype.writeUInt8">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUInt8
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeUInt8 = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeUIntBE" id="apidoc.element.ttystudio.buffer.prototype.writeUIntBE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUIntBE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeUIntBE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.buffer.prototype.writeUIntLE" id="apidoc.element.ttystudio.buffer.prototype.writeUIntLE">
+        function <span class="apidocSignatureSpan">ttystudio.buffer.prototype.</span>writeUIntLE
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeUIntLE = function () {
+  try {
+    return this.buffer[method].apply(this.buffer, arguments);
+  } catch (e) {
+    if (~e.message.indexOf(&#x27;out of range&#x27;)) {
+      var buf = new Buffer(this.buffer.length * 2);
+      this.buffer.copy(buf);
+      this.buffer = buf;
+      return this[method].apply(this, arguments);
+    }
+    throw e;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.optimize" id="apidoc.module.ttystudio.optimize">module ttystudio.optimize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.optimize.optimize" id="apidoc.element.ttystudio.optimize.optimize">
+        function <span class="apidocSignatureSpan">ttystudio.</span>optimize
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Optimizer(options) {
+  this.options = options || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.optimize.prototype" id="apidoc.module.ttystudio.optimize.prototype">module ttystudio.optimize.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.optimize.prototype.log" id="apidoc.element.ttystudio.optimize.prototype.log">
+        function <span class="apidocSignatureSpan">ttystudio.optimize.prototype.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+  if (!this.options.log) return;
+  return console.error.apply(console, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.optimize.prototype.offset" id="apidoc.element.ttystudio.optimize.prototype.offset">
+        function <span class="apidocSignatureSpan">ttystudio.optimize.prototype.</span>offset
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">offset = function (frame) {
+  var bmp = frame.data || frame
+    , left = null
+    , top = null
+    , right = null
+    , bottom = null
+    , x
+    , y
+    , cell
+    , hash;
+
+  if (!this.damage) {
+    this.damage = [];
+    for (y = 0; y &#x3c; bmp.length; y++) {
+      bline = [];
+      for (x = 0; x &#x3c; bmp[y].length; x++) {
+        bline.push(null);
+      }
+      this.damage.push(bline);
+    }
+  }
+
+  for (y = 0; y &#x3c; bmp.length; y++) {
+    cline = bmp[y];
+    for (x = 0; x &#x3c; cline.length; x++) {
+      cell = cline[x];
+      hash = (cell.r &#x3c;&#x3c; 24) | (cell.g &#x3c;&#x3c; 16) | (cell.b &#x3c;&#x3c; 8) | (cell.a &#x3c;&#x3c; 0);
+      if (this.damage[y][x] !== hash) {
+        if (left === null) left = x;
+        else if (x &#x3c; left) left = x;
+        if (top === null) top = y;
+      }
+    }
+  }
+
+  for (y = bmp.length - 1; y &#x3e;= 0; y--) {
+    cline = bmp[y];
+    for (x = cline.length - 1; x &#x3e;= 0; x--) {
+      cell = cline[x];
+      hash = (cell.r &#x3c;&#x3c; 24) | (cell.g &#x3c;&#x3c; 16) | (cell.b &#x3c;&#x3c; 8) | (cell.a &#x3c;&#x3c; 0);
+      if (this.damage[y][x] !== hash) {
+        if (right === null) right = x + 1;
+        else if (x + 1 &#x3e; right) right = x + 1;
+        if (bottom === null) bottom = y + 1;
+      }
+      this.damage[y][x] = hash;
+    }
+  }
+
+  if (left === null) left = 0;
+  if (right === null) right = 1;
+
+  if (top === null) top = 0;
+  if (bottom === null) bottom = 1;
+
+  if (left &#x3e; right) {
+    throw new Error(&#x27;optimizer failed: left &#x3e; right&#x27;);
+  }
+
+  if (top &#x3e; bottom) {
+    throw new Error(&#x27;optimizer failed: top &#x3e; bottom&#x27;);
+  }
+
+  bmp = bmp.slice(top, bottom);
+  for (y = 0; y &#x3c; bmp.length; y++) {
+    bmp[y] = bmp[y].slice(left, right);
+  }
+
+  this.log(&#x27;frame dimensions: %dx%d&#x27;, bmp[0].length, bmp.length);
+
+  return {
+    left: left,
+    top: top,
+    data: bmp,
+    optimized: true
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.optimize.prototype.reset" id="apidoc.element.ttystudio.optimize.prototype.reset">
+        function <span class="apidocSignatureSpan">ttystudio.optimize.prototype.</span>reset
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function (frame) {
+  delete this.damage;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.png" id="apidoc.module.ttystudio.png">module ttystudio.png</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.png" id="apidoc.element.ttystudio.png.png">
+        function <span class="apidocSignatureSpan">ttystudio.</span>png
+        <span class="apidocSignatureSpan">(frames, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PNGWriter(frames, options) {
+  var self = this;
+
+  if (!(this instanceof PNGWriter)) {
+    return new PNGWriter(frames, options);
+  }
+
+  EventEmitter.call(this);
+
+  this.frames = frames;
+  this.options = options || {};
+
+  this.optimizer = new Optimizer(this.options);
+
+  this.cbuff = new ExpandingBuffer(256);
+  this.seq = 0;
+  this.bitDepth = 8;
+  this.coffset = -1;
+
+  if (this.options.stream) {
+    this.stream = this.options.stream;
+    var event = this.stream.__proto__ === fs.WriteStream.prototype
+      ? &#x27;close&#x27;
+      : &#x27;finish&#x27;;
+    this.stream.on(event, function() {
+      self.emit(&#x27;done&#x27;, event);
+    });
+  } else {
+    this.offset = 0;
+    this.output = new ExpandingBuffer(4096);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ttystudio.png.prototype" id="apidoc.module.ttystudio.png.prototype">module ttystudio.png.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.compress" id="apidoc.element.ttystudio.png.prototype.compress">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>compress
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compress = function (data) {
+  return zlib.deflateSync(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.crc" id="apidoc.element.ttystudio.png.prototype.crc">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>crc
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function crc32(buf) {
+  var crc = -1;
+  for (var i = 0, len = buf.length; i &#x3c; len; i++) {
+    crc = crcTable[(crc ^ buf[i]) &#x26; 0xff] ^ (crc &#x3e;&#x3e;&#x3e; 8);
+  }
+  return crc ^ -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.createPalette" id="apidoc.element.ttystudio.png.prototype.createPalette">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>createPalette
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPalette = function () {
+  var self = this
+    , lookup = {}
+    , i = 0
+    , table;
+
+  this.frames.forEach(function(frame, frameIndex) {
+    if (!frame.data &#x26;&#x26; this.options.convertFrame) {
+      frame = this.options.convertFrame(frame);
+    }
+    if (frameIndex % 30 === 0) {
+      this.out(&#x27;.&#x27;);
+    }
+    table = frame.data.reduce(function(table, line) {
+      var colors = line.reduce(function(out, pixel) {
+        [pixel, pixel.fg].forEach(function(pixel) {
+          if (!pixel) return;
+
+          var hash = (pixel.r &#x3c;&#x3c; 24)
+            | (pixel.g &#x3c;&#x3c; 16)
+            | (pixel.b &#x3c;&#x3c; 8)
+            | (pixel.a &#x3c;&#x3c; 0);
+
+          if (lookup[hash] != null) {
+            return;
+          }
+
+          if (i + 1 &#x3e; 0xffffffff) {
+            self.bitDepth = 8;
+            throw new Error(&#x27;palette building failed. switching to rgba.&#x27;);
+          } else if (i + 1 &#x3e; 0xffff) {
+            self.bitDepth = 32;
+          } else if (i + 1 &#x3e; 0xff) {
+            self.bitDepth = 16;
+          }
+
+          lookup[hash] = i;
+          i++;
+
+          out.push({
+            r: pixel.r,
+            g: pixel.g,
+            b: pixel.b,
+            a: pixel.a
+          });
+        });
+        return out;
+      }, []);
+      return table.concat(colors);
+    }, table || []);
+  }, this);
+
+  this.out(&#x27;\n&#x27;);
+
+  if (this.bitDepth === 16) {
+    Object.keys(lookup).forEach(function(hash) {
+      var i = lookup[hash];
+      lookup[hash] = [(i &#x3e;&#x3e; 8) &#x26; 0xff, i &#x26; 0xff];
+    });
+  } else if (this.bitDepth === 32) {
+    Object.keys(lookup).forEach(function(hash) {
+      var i = lookup[hash];
+      lookup[hash] = [(i &#x3e;&#x3e; 24) &#x26; 0xff, (i &#x3e;&#x3e; 16) &#x26; 0xff, (i &#x3e;&#x3e; 8) &#x26; 0xff, i &#x26; 0xff];
+    });
+  }
+
+  table.lookup = lookup;
+
+  return table;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.endCRC" id="apidoc.element.ttystudio.png.prototype.endCRC">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>endCRC
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">endCRC = function () {
+  var crc = this.crc(this.cbuff.buffer.slice(0, this.coffset));
+  this.coffset = -1;
+  if (this.stream) {
+    var b = new Buffer(4);
+    b.writeInt32BE(crc);
+    return this.stream.write(b);
+  }
+  this.output.writeInt32BE(crc);
+  this.offset += 4;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.log" id="apidoc.element.ttystudio.png.prototype.log">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+  if (!this.options.log) return;
+  return console.error.apply(console, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.lookupPalette" id="apidoc.element.ttystudio.png.prototype.lookupPalette">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>lookupPalette
+        <span class="apidocSignatureSpan">(pixel)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lookupPalette = function (pixel) {
+  var hash = (pixel.r &#x3c;&#x3c; 24)
+    | (pixel.g &#x3c;&#x3c; 16)
+    | (pixel.b &#x3c;&#x3c; 8)
+    | (pixel.a &#x3c;&#x3c; 0);
+  return this.palette.lookup[hash];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.out" id="apidoc.element.ttystudio.png.prototype.out">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>out
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">out = function (text) {
+  if (!this.options.log) return;
+  return process.stderr.write(text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.startCRC" id="apidoc.element.ttystudio.png.prototype.startCRC">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>startCRC
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startCRC = function () {
+  this.coffset = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.write" id="apidoc.element.ttystudio.png.prototype.write">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function () {
+  var frameIndex = 0
+    , frame;
+
+  this.optimizer.reset();
+
+  if (this.options.usePalette !== false) {
+    this.log(&#x27;building palette (may take a while)&#x27;);
+    try {
+      this.palette = this.createPalette();
+    } catch (e) {
+      this.log(e.message);
+    }
+  }
+
+  this.log(&#x27;writing head&#x27;);
+  this.writeHead();
+
+  this.log(&#x27;writing palette&#x27;);
+  this.writePalette();
+
+  this.log(&#x27;writing trans palette&#x27;);
+  this.writeTrans();
+
+  if (this.frames.length &#x3e; 1) {
+    this.log(&#x27;writing actl&#x27;);
+    this.writeACTL();
+    this.log(&#x27;writing idat&#x27;);
+    frame = this.frames[(this.frames.length - 1) / 2 | 0];
+    this.writeIDAT(frame);
+  }
+
+  if (this.frames.length &#x3e; 1) {
+    while (this.frames.length) {
+      this.log(&#x27;writing frame %d - %d left&#x27;, frameIndex, this.frames.length);
+      frame = this.frames.shift();
+      this.writeFrame(frame, frameIndex++);
+    }
+  } else {
+    this.log(&#x27;writing idat&#x27;);
+    frame = this.frames.shift();
+    this.writeIDAT(frame);
+  }
+
+  this.log(&#x27;writing eof&#x27;);
+  this.writeEOF();
+
+  if (this.stream) return;
+  return this.output.slice(0, this.offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ writer.on(&#x27;done&#x27;, function(event) {
+   log(&#x27;stream: &#x27; + event);
+   log(&#x27;wrote image to %s&#x27;, output);
+   return callback();
+ });
+
+ log(&#x27;writing image&#x27;);
+ writer.<span class="apidocCodeKeywordSpan">write</span>();
+
+ return writer;
+}
+
+/**
+* Helpers
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.write16" id="apidoc.element.ttystudio.png.prototype.write16">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>write16
+        <span class="apidocSignatureSpan">(ch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write16 = function (ch) {
+  if (this.coffset !== -1) {
+    this.cbuff.writeUInt16BE(ch, this.coffset);
+    this.coffset += 2;
+  }
+
+  if (this.stream) {
+    var b = new Buffer(2);
+    b.writeUInt16BE(ch, 0);
+    return this.stream.write(b);
+  }
+  this.output.writeUInt16BE(ch, this.offset);
+  this.offset += 2;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.write32" id="apidoc.element.ttystudio.png.prototype.write32">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>write32
+        <span class="apidocSignatureSpan">(ch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write32 = function (ch) {
+  if (this.coffset !== -1) {
+    this.cbuff.writeUInt32BE(ch, this.coffset);
+    this.coffset += 4;
+  }
+
+  if (this.stream) {
+    var b = new Buffer(4);
+    b.writeUInt32BE(ch, 0);
+    return this.stream.write(b);
+  }
+  this.output.writeUInt32BE(ch, this.offset);
+  this.offset += 4;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.write8" id="apidoc.element.ttystudio.png.prototype.write8">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>write8
+        <span class="apidocSignatureSpan">(ch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write8 = function (ch) {
+  if (this.coffset !== -1) {
+    this.cbuff.writeUInt8(ch, this.coffset);
+    this.coffset += 1;
+  }
+
+  if (this.stream) {
+    var b = new Buffer(1);
+    b.writeUInt8(ch, 0);
+    return this.stream.write(b);
+  }
+  this.output.writeUInt8(ch, this.offset);
+  this.offset += 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.writeACTL" id="apidoc.element.ttystudio.png.prototype.writeACTL">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeACTL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeACTL = function () {
+  this.write32(4 + 4); // size
+  this.startCRC();
+  this.writeText(&#x27;acTL&#x27;); // type
+  this.write32(this.frames.length); // num frames
+  this.write32(this.options.numPlays || 0); // num plays
+  this.endCRC();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.writeEOF" id="apidoc.element.ttystudio.png.prototype.writeEOF">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeEOF
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeEOF = function (frame) {
+  var self = this;
+
+  this.write32(0); // size
+  this.startCRC();
+  this.writeText(&#x27;IEND&#x27;); // type
+  this.endCRC();
+
+  if (this.stream &#x26;&#x26; this.stream !== process.stdout) {
+    try {
+      this.stream.end();
+    } catch (e) {
+      nextTick(function() {
+        self.emit(&#x27;done&#x27;, &#x27;eof&#x27;);
+      });
+    }
+  } else {
+    nextTick(function() {
+      self.emit(&#x27;done&#x27;, &#x27;eof&#x27;);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.writeFrame" id="apidoc.element.ttystudio.png.prototype.writeFrame">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeFrame
+        <span class="apidocSignatureSpan">(frame, frameIndex)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFrame = function (frame, frameIndex) {
+  var self = this
+    , data
+    , j;
+
+  if (!frame.data &#x26;&#x26; this.options.convertFrame) {
+    frame = this.options.convertFrame(frame);
+  }
+
+  frame = this.optimizer.offset(frame);
+
+  this.write32(4 + 4 + 4 + 4 + 4 + 2 + 2 + 1 + 1); // size
+  this.startCRC();
+  this.writeText(&#x27;fcTL&#x27;); // type
+  this.write32(this.seq++); // seqNumber
+  this.write32(frame.data[0].length); // width
+  this.write32(frame.data.length); // height
+  this.write32(frame.left || 0); // left
+  this.write32(frame.top || 0); // top
+  this.write16(this.options.delay || 100); // delay numerator
+  this.write16(1000); // delay denominator
+  this.write8(0); // dispose op
+  this.write8(0); // blend op
+  this.endCRC();
+
+  // if (frameIndex === 0) {
+  //   this.log(&#x27;writing idat&#x27;);
+  //   this.writeIDAT(frame);
+  //   return;
+  // }
+
+  data = this.compress(new Buffer(frame.data.reduce(function(out, line) {
+    return out.concat(0, line.reduce(function(out, pixel) {
+      if (self.palette) {
+        return out.concat(self.lookupPalette(pixel));
+      } else {
+        return out.concat([pixel.r, pixel.g, pixel.b, pixel.a]);
+      }
+    }, []));
+  }, [])));
+
+  this.write32(4 + data.length);
+  this.startCRC();
+  this.writeText(&#x27;fdAT&#x27;);
+  this.write32(this.seq++); // seqNumber
+  for (j = 0; j &#x3c; data.length; j++) {
+    this.write8(data[j]);
+  }
+  this.endCRC();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.writeHead" id="apidoc.element.ttystudio.png.prototype.writeHead">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeHead
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeHead = function () {
+  var frame = this.frames[0];
+  if (!frame.data &#x26;&#x26; this.options.convertFrame) {
+    frame = this.options.convertFrame(frame);
+    // this.frames[0] = frame;
+  }
+
+  this.write32(0x89504e47);
+  this.write32(0x0d0a1a0a);
+
+  this.write32(4 + 4 + 1 + 1 + 1 + 1 + 1); // size
+  this.startCRC();
+  this.writeText(&#x27;IHDR&#x27;); // type
+  this.write32(frame.data[0].length); // width
+  this.write32(frame.data.length); // height
+  this.write8(this.bitDepth || 8); // bit depth
+  if (this.palette) {
+    this.write8(3); // color type
+  } else {
+    this.write8(6); // color type
+  }
+  this.write8(0); // compression
+  this.write8(0); // filter
+  this.write8(0); // interlace
+  this.endCRC();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.writeIDAT" id="apidoc.element.ttystudio.png.prototype.writeIDAT">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeIDAT
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeIDAT = function (frame) {
+  var self = this
+    , data
+    , i;
+
+  if (!frame.data &#x26;&#x26; this.options.convertFrame) {
+    frame = this.options.convertFrame(frame);
+  }
+
+  // if (!frame.optimized) {
+  //   frame = this.optimizer.offset(frame);
+  // }
+
+  data = this.compress(new Buffer(frame.data.reduce(function(out, line) {
+    return out.concat(0, line.reduce(function(out, pixel) {
+      if (self.palette) {
+        return out.concat(self.lookupPalette(pixel));
+      } else {
+        return out.concat([pixel.r, pixel.g, pixel.b, pixel.a]);
+      }
+    }, []));
+  }, [])));
+
+  this.write32(data.length); // size
+  this.startCRC();
+  this.writeText(&#x27;IDAT&#x27;); // type
+  for (i = 0; i &#x3c; data.length; i++) {
+    this.write8(data[i]);
+  }
+  this.endCRC();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.writePalette" id="apidoc.element.ttystudio.png.prototype.writePalette">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writePalette
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writePalette = function () {
+  var i
+    , color;
+
+  if (!this.palette) return;
+
+  this.write32(this.palette.length * 3); // size
+  this.startCRC();
+  this.writeText(&#x27;PLTE&#x27;); // type
+  for (i = 0; i &#x3c; this.palette.length; i++) {
+    color = this.palette[i];
+    this.write8(color.r);
+    this.write8(color.g);
+    this.write8(color.b);
+  }
+  this.endCRC();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.writeText" id="apidoc.element.ttystudio.png.prototype.writeText">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeText
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeText = function (text) {
+  if (this.coffset !== -1) {
+    this.cbuff.write(text, this.coffset, &#x27;ascii&#x27;);
+    this.coffset += Buffer.byteLength(text);
+  }
+
+  if (this.stream) {
+    return this.stream.write(text, &#x27;ascii&#x27;);
+  }
+  this.output.write(text, this.offset, &#x27;ascii&#x27;);
+  this.offset += Buffer.byteLength(text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ttystudio.png.prototype.writeTrans" id="apidoc.element.ttystudio.png.prototype.writeTrans">
+        function <span class="apidocSignatureSpan">ttystudio.png.prototype.</span>writeTrans
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeTrans = function () {
+  var i
+    , color;
+
+  if (!this.palette) return;
+
+  this.write32(this.palette.length * 1); // size
+  this.startCRC();
+  this.writeText(&#x27;tRNS&#x27;); // type
+  for (i = 0; i &#x3c; this.palette.length; i++) {
+    color = this.palette[i];
+    this.write8(color.a);
+  }
+  this.endCRC();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
